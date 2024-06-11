@@ -3,7 +3,9 @@
 // @namespace    tampermonkey-example
 // @version      1.0
 // @description  Laboratorio 4 criptografía y seguridad en redes.
+// @author       Benjamin Escandar
 // @match        https://cripto.tiiny.site/
+// @match        https://analytics.tiiny.site/js/plausible.js
 // @require      https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js#sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ==
 // @license      MIT
 // ==/UserScript==
@@ -27,12 +29,13 @@
  if (contraseña.length > 24) {
      contraseña = contraseña.substring(0, 24); // Limitar la contraseña a 24 caracteres.
  }
-
  console.log(`La llave es: ${contraseña}`);
+    
 
  // Parte 2: Contar los mensajes cifrados
  var mensajesCifrados = document.querySelectorAll('div[class^="M"]');  // Esto asume que los mensajes tienen clases que empiezan con "M"
  console.log(`Los mensajes cifrados son: ${mensajesCifrados.length}`);
+
 
  // Parte 3: Descifrar cada mensaje y mostrarlo
  var divs = document.querySelectorAll('div[class^="M"]');
